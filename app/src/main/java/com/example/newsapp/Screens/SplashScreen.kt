@@ -20,23 +20,23 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.newsapp.MainViewModel
 import com.example.newsapp.navigation.Screens
 import com.example.newsapp.ui.theme.NewsAppTheme
 import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
-    var startAnimate by remember{
+    var startAnimate by remember {
         mutableStateOf(false)
     }
     val alphaAnimation = animateFloatAsState(
         targetValue = if (startAnimate) 1f else 0f,
-        animationSpec = tween(durationMillis = 3000)
+        animationSpec =  tween(durationMillis = 3000)
     )
-    LaunchedEffect(key1 = true){
+    LaunchedEffect(key1 = true) {
         startAnimate = true
         delay(4000)
         navController.navigate(Screens.Main.route)
@@ -45,7 +45,7 @@ fun SplashScreen(navController: NavController) {
 }
 
 @Composable
-fun Splash(alpha: Float ) {
+fun Splash(alpha: Float) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
@@ -53,16 +53,16 @@ fun Splash(alpha: Float ) {
         Icon(
             modifier = Modifier
                 .size(120.dp)
-                .alpha(alpha = alpha), //Прозрачность
+                .alpha(alpha = alpha),
             imageVector = Icons.Default.PlayArrow,
-            contentDescription = "null",
+            contentDescription = "",
             tint = Color.Black
         )
     }
 }
 
 @Composable
-fun prevSplash(){
+fun prevSplash() {
     NewsAppTheme {
         Splash(1f)
     }

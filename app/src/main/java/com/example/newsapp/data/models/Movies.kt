@@ -1,17 +1,27 @@
 package com.example.newsapp.data.models
 
-
-import com.google.gson.annotations.SerializedName
-
 data class Movies(
-    @SerializedName("code")
-    val code: Int,
-    @SerializedName("message")
-    val message: String,
-    @SerializedName("name")
+    val _links: Links,
+    val averageRuntime: Int,
+    val dvdCountry: Any,
+    val ended: String,
+    val externals: Externals,
+    val genres: List<String>,
+    val id: Int,
+    val image: Image,
+    val language: String,
     val name: String,
-    @SerializedName("previous")
-    val previous: Previous,
-    @SerializedName("status")
-    val status: Int
+    val network: Network,
+    val officialSite: String,
+    val premiered: String,
+    val rating: Rating,
+    val runtime: Int,
+    val schedule: Schedule,
+    val status: String,
+    val summary: String,
+    val type: String,
+    val updated: Int,
+    val url: String,
+    val webChannel: Any,
+    val weight: Int
 )
