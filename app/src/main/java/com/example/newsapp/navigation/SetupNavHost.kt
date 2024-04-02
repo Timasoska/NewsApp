@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.newsapp.Screens.MainScreen
 import com.example.newsapp.Screens.SplashScreen
 import com.example.newsapp.utils.Constants
 
@@ -25,7 +26,7 @@ fun SetupNavHost(navController: NavHostController) {
 
         }
         composable(route = Screens.Main.route) {
-
+            MainScreen(navController = navController)
         }
     }
 }
